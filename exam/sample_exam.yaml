@@ -1,0 +1,14 @@
+exam:
+  total_score: 100
+  total_score_objective: 100
+  class: "DS152 - DESENVOLVIMENTO DE APLICAÇÕES CORPORATIVAS - N"
+  name: "PROVA I (C)"
+  date: "13/12/2022"
+  balanced_questions: 3
+
+# "*" to use all questions
+questions:
+  test1:
+    test1_F: 2
+  test2:
+    test2_F: 2

@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-20 09:32-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: exam_v2.py:119
+msgid "ERROR: "
+msgstr "ERRO: "
+
+#: exam_v2.py:123
+msgid "Usage: "
+msgstr "Uso: "
+
+#: exam_v2.py:126
+msgid "Commands:"
+msgstr "Comandos:"
+
+#: exam_v2.py:127
+msgid "     help            : show this message"
+msgstr "     help            : mostra esta mensagem"
+
+#: exam_v2.py:128
+msgid ""
+"     init <name>     : create new <name>.yaml file, create template files"
+msgstr ""
+"     init <nome>     : cria novo arquivo <nome>.yaml, cria arquivos de "
+"template"
+
+#: exam_v2.py:129
+msgid "     new <name>      : given a <name>.yaml file, create a new exam"
+msgstr "     new <nome>      : dado um arquivo <name>.yaml, cria um novo exame"
+
+#: exam_v2.py:130
+msgid ""
+"     latex <name>    : generate latex and PDF of exam from previous "
+"generated exam"
+msgstr "     latex <nome>    : gera arquivos latex e PDF de um exame previamente gerado"
+
+#: exam_v2.py:131
+msgid "     generate <name> : with .yaml file, calls new and latex "
+msgstr "     generate <nome> : com o arquivo  <nome>.yaml, chama new e latex "
+
+#: exam_v2.py:134
+msgid "     show  <name>    : show configurations"
+msgstr "     show  <nome>    : mostra configurações"
+
+#: exam_v2.py:135
+msgid "     showConfig      : show global configurations"
+msgstr "     showConfig      : mostra configurações globais"
+
+#: exam_v2.py:136
+msgid "     clear <name>    : remove generated exam files"
+msgstr "     clear <nome>    : remove os arquivos gerados de um exame"
+
+#: exam_v2.py:137
+msgid "     remove <name>   : remove all exam files"
+msgstr "     remove <nome>   : remove todos os arquivos do exame"
+
+#: exam_v2.py:138
+msgid "     clone <e1> <e2> : copy exam e1 to e2"
+msgstr "     clone <e1> <e2> : copia o exame e1 para e2"
+
+#: exam_v2.py:140
+msgid "Common use: init | clone > new > latex  "
+msgstr "Uso comum: init | clone > new > latex  "
+
+#: exam_v2.py:141
+msgid "Common use: init | clone > generate  "
+msgstr "Uso comum: init | clone > generate  "
+
+#: exam_v2.py:165
+msgid "Error translating number to letter - answer: {}"
+msgstr "Erro traduzindo número para letra - resposta: {}"
+
+#: exam_v2.py:203
+msgid "ERROR: {}"
+msgstr "ERRO: {}"
+
+#: exam_v2.py:210
+msgid "Syntax error: {}"
+msgstr "Erro de sintaxe: {}"
+
+#: exam_v2.py:258
+msgid "Please respond with 'y' (yes) or 'n' (no) or 'c' (cancel).\n"
+msgstr "Por favor, respoda com 'y' (sim) ou 'n' (não) ou 'c' (cancelar).\n"
+
+#: exam_v2.py:309
+msgid "Directory {} already exists. Can overwrite files?"
+msgstr "Diretório {} já existe. Pode sobrescrever os arquivos?"
+
+#: exam_v2.py:311
+msgid "Removing files..."
+msgstr "Removendo arquivos..."
+
+#: exam_v2.py:314
+msgid "To make a new exam, files need to be overwritten. Try again."
+msgstr ""
+"Para fazer um novo exame, os arquivos precisam ser sobrescritos. Tente "
+"novamente."
+
+#: exam_v2.py:317
+msgid "!!! Creation of the directory {} failed"
+msgstr "!!! Criação do diretório {} falhou"
+
+#: exam_v2.py:324 exam_v2.py:339
+msgid "!!! Template file {} does not exist"
+msgstr "!!! Arquivo de template {} não existe"
+
+#: exam_v2.py:326 exam_v2.py:337
+msgid "Copying file {}..."
+msgstr "Copiando arquivo {}..."
+
+#: exam_v2.py:437
+msgid ""
+"Too few questions in database to create exam: {} questions stored but {} "
+"questions solicited."
+msgstr ""
+"Muito poucas questões na base de dados para criar o exame: {} questões "
+"armazenadas mas {} questões requeridas."
+
+#: exam_v2.py:443
+msgid "Question type : {}"
+msgstr "Tipo da questão : {}"
+
+#: exam_v2.py:444
+msgid "Questions in database : {}"
+msgstr "Questões na base de dados : {}"
+
+#: exam_v2.py:445
+msgid "Questions in exam     : {}"
+msgstr "Questões do exame     : {}"
+
+#: exam_v2.py:450
+msgid "Generating {} questions..."
+msgstr "Gerando {} questões..."
+
+#: exam_v2.py:463
+msgid "Score of each question {}"
+msgstr "Nota de cada questão {}"
+
+#: exam_v2.py:496
+msgid ""
+"Insufficient questions to make this exam. Need {} but only can choose {} "
+"with all restrictions."
+msgstr ""
+"Questões insuficientes para fazer este exame. Necessário {} mas somente pode "
+"escolher {} com todas as restrições."
+
+#: exam_v2.py:637
+msgid "File {} already exists. Want to overwrite?"
+msgstr "Arquivo {} já existe. Quer sobrescrever?"
+
+#: exam_v2.py:639
+msgid "File {} maintained."
+msgstr "Arquivo {} mantido."
+
+#: exam_v2.py:661
+msgid "Exam {} initialized."
+msgstr "Exame {} inicializado."
+
+#: exam_v2.py:662
+msgid "File {} created."
+msgstr "Arquivo {} criado."
+
+#: exam_v2.py:669
+msgid "Generating exam {}."
+msgstr "Gerando exame {}."
+
+#: exam_v2.py:673 exam_v2.py:682
+msgid "Exam {} created."
+msgstr "Exame {} criado."
+
+#: exam_v2.py:679
+msgid "Cloning exam {}."
+msgstr "Gerando exame {}."
+
+#: exam_v2.py:713
+msgid "Want to remove files in directory {} ?"
+msgstr "Quer remover os arquivos do diretório {} ?"
+
+#: exam_v2.py:715 exam_v2.py:727
+msgid "Removing files in {}"
+msgstr "Removendo arquivos em {}"
+
+#: exam_v2.py:718 exam_v2.py:731
+msgid "Nothing to clear, {} directory does not exists."
+msgstr "Nada para limpar, diretório {} não existe."
+
+#: exam_v2.py:725
+msgid "Want to remove all exam files ({}) ?"
+msgstr "Quer remover todos os arquivos do exame ({}) ?"
+
+#: exam_v2.py:737
+msgid "Questions Path : {}"
+msgstr "Caminho das questões : {}"
+
+#: exam_v2.py:766
+msgid "Question not in folder (not counted): {}"
+msgstr "Questões fora da pasta (não contadas): {}"
+
+#: exam_v2.py:782
+msgid "Compiling TEX files from exam {}."
+msgstr "Compilando arquivos TEX do exame {}."
+
+#: exam_v2.py:795
+msgid "!!! Error generating exam: {}.pdf not generated."
+msgstr "!!! Erro gerando exame: {}.pdf não gerado."
+
+#: exam_v2.py:799
+msgid "Backing up file {}.pdf to {}_bak.pdf"
+msgstr "Salvando arquivo {}.pdf para {}_back.pdf"
+
+#: exam_v2.py:805
+msgid "PDF generated {}.pdf."
+msgstr "PDF gerado {}.pdf"
+
+#: exam_v2.py:864
+msgid "Insufficient parameters for command {} : {} "
+msgstr "Parâmetros insuficientes para o comando {} : {}"
+
+#: exam_v2.py:871
+msgid "Invalid command {}."
+msgstr "Comando inválido {}."

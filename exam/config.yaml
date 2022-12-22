@@ -1,0 +1,13 @@
+config:
+  locale: en  # pt_BR en es
+  questions:
+    path: "questions/"
+  restrictions:
+    - [test1_F_q0002, test1_F_q0003]
+    - [jstlel_F_q0006, jstlel_F_q0013, jstlel_F_q0024]
+    - [jstlel_F_q0009, jstlel_F_q0014]
+    - [jstlel_F_q0018, jstlel_F_q0021]
+    - [jstlel_F_q0003, jstlel_F_q0023, jstlel_F_q0026]
+    - [jsp_F_q0001, jsp_F_q0007]
+    - [servlets_F_q0018, servlets_F_q0031, servlets_F_q0033]
+    - [servlets_F_q0013, servlets_F_q0032]

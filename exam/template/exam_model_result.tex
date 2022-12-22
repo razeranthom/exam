@@ -1,0 +1,93 @@
+\documentclass[a4paper,addpoints,answers,8pt]{exam}
+
+%PACOTES E REDEFINICOES
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{hyphenat}
+%\usepackage[a4paper,margin=0.5cm,centering]{geometry}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{color}
+
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=0mm,
+ top=5mm,
+ bottom=5mm,
+ right=5mm,
+ }
+\pagestyle{empty}
+%\extrawidth{.5in}
+%\extraheadheight{-0.8in}
+%\extrafootheight{-0.8in}
+
+
+
+\setlength{\columnsep}{4em}
+\setlength{\columnseprule}{0.3pt}
+
+\renewcommand{\thechoice}{\alph{choice}}
+\renewcommand{\choicelabel}{\thechoice)}
+\pointname{}
+\vqword{Questão}
+\hqword{Questão}
+\vpword{Pontos}
+\hpword{Pontos}
+\vsword{Resposta}
+\hsword{Resposta}
+\renewcommand{\questionshook}{%
+    \setlength{\leftmargin}{30pt}%
+}
+\renewcommand{\choiceshook}{%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{15pt}%
+}
+
+\newcommand{\verbatimfont}[1]{\renewcommand{\verbatim@font}{\ttfamily#1}}
+
+
+\bracketedpoints
+
+%\qformat{\textbf{Questão \thequestion.} [\thepoints]}
+
+\begin{document}
+ 
+%CABECALHO
+\input{[[NAME]]_header.tex}
+
+%INSTRUCOES
+\input{instrucoes.tex}
+
+\small 
+
+% Adiciona as questoes da prova 
+\begin{questions}
+
+\begin{multicols}{2}
+\input{[[NAME]]_obj.tex}
+\end{multicols}
+
+\input{[[NAME]]_disc.tex}
+
+\end{questions}
+
+\newpage
+\begin{center}
+  FOLHAS DE RESPOSTAS\\
+\hfill \break
+
+
+  \setlength{\doublerulesep}{0.25in}
+  \multicolumngradetable{2}[questions]
+
+%   \input{minha_prova_disc_sol.tex}
+
+\end{center}
+
+\end{document}
