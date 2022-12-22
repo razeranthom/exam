@@ -19,6 +19,7 @@ __pycache__/
 *.po~
 
 venv/
+dist/
 
 exam/questions/angular/
 exam/questions/docker/

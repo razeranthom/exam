@@ -12,6 +12,10 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+  'pyaml >= 21.10.1',
+  'typer >= 0.7.0'
+]
 
 [project.urls]
 "Homepage" = "https://github.com/razeranthom/exam"
