@@ -15,13 +15,16 @@
 
 1. To create a new exam configuration file (examname.yaml)
 
+```
 $ python3 ./exam_v2.py init examname
+```
 
 2. Edit your exam to your needs
 3. To generate exam files
 
+```
 $ python3 ./exam_v2.py generate examname
-
+```
 
 # Translations
 
@@ -35,21 +38,27 @@ All strings in script that can be translated are marked with function _()
 
 xgettext generated an base.pot file with the sintax:
 
+```
 \#: arq.py:116
 msgid "Unknown system error"
 msgstr ""
+```
 
 Where msgid is the original message and msgstr is the translated message.
 
 After that, in locales folder, all supported locales have a folder structure, like:
 
+```
 locales/pt_BR/LC_MESSAGES
+```
 
 Inside LC_MESSAGES the base.pot file is copied as base.po and all messages needs to be translated (msgstr).
 
 Then, running:
 
+```
 msgfmt -o locales/XX/LC_MESSAGES/base.mo locales/XX/LC_MESSAGES/base
+```
 
 Compile base.po in base.mo and now the script is translated.
 
