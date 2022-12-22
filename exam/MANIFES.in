@@ -1,0 +1,6 @@
+# MANIFEST.in
+
+include *.yaml *.sh *.txt
+recursive-include locales *.mo *.po
+recursive-include questions *.tex
+recursive-include template *.tex *.cls *.png
