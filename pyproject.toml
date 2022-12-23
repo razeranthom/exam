@@ -1,6 +1,6 @@
 [project]
 name = "exam"
-version = "0.0.1"
+version = "0.0.9"
 authors = [
   { name="Razer Anthom Nizer Rojas Montaño", email="razer.anthom@gmail.com" },
 ]
@@ -20,6 +20,9 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/razeranthom/exam"
 "Bug Tracker" = "https://github.com/razeranthom/exam/issues"
+
+[project.scripts]
+exam = "exam.exam:main"
 
 [build-system]
 requires = ["hatchling"]

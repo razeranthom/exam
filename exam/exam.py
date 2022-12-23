@@ -21,8 +21,10 @@ from random import randint
 import yaml
 import gettext
 from pprint import pprint
+from distutils.spawn import find_executable
 
-from exam import __app_name__, __version__
+
+from .version import __app_name__, __version__
 
 __DEBUG = True 
 __NAME = "EXAM" 
@@ -210,7 +212,7 @@ def removeSuffix(s, suf):
 ############################################################################
 def error(string):
 	print (_("ERROR: {}").format(string) )
-	sys.exit(0)
+	sys.exit(1)
 
 ############################################################################
 # 
@@ -218,7 +220,7 @@ def error(string):
 def errorCommand(string):
 	print (_("Syntax error: {}").format(string) )
 	usage()
-	sys.exit(0)
+	sys.exit(1)
 
 ############################################################################
 # Loads the configuration file
@@ -249,6 +251,9 @@ def loadConfig():
 ############################################################################
 def loadExamConfig():
     
+    if not os.path.exists(Exam.EXAM_CONFIG_FILE):
+        error(_("File {} does not exists.").format(Exam.EXAM_CONFIG_FILENAME))
+        
     with open(Exam.EXAM_CONFIG_FILE, 'r') as file:
         my_config = yaml.safe_load(file)
             
@@ -301,7 +306,6 @@ def defineGlobals(exam):
 	Exam.QUESTIONS_FILENAME = Exam.EXAM_NAME + _QUESTIONS_FILE_SUFFIX
 	Exam.QUESTIONS_FILE = Exam.EXAM_PATH + Exam.QUESTIONS_FILENAME
 	
-	Exam.examConfig = loadExamConfig()
  
  
 ############################################################################
@@ -435,8 +439,10 @@ def generateQuestions():
 	for d in Exam.examConfig["questions"]:
 		# d is a folder, like angular
 		temp = slash(Config.PATH_QUESTIONS + d)
-		#print (d)
-		#print (temp)
+	
+		if not os.path.exists(temp):
+			error(_("Question path does not exists: {} ".format(temp)))
+   
 		for q in Exam.examConfig["questions"][d]:
 			# q is a question type (prefix), like angular_F
 			#print ("   " + q)
@@ -668,10 +674,10 @@ def commandInit():
 
 		myfile.write('# "*" to use all questions\n')
 		myfile.write('questions:\n')
-		myfile.write('  angular:\n')
-		myfile.write('    angular_F: 36\n')
-		myfile.write('  dp_gof:\n')
-		myfile.write('    dp_F: 14\n')
+		myfile.write('  test1:\n')
+		myfile.write('    test1_F: 2\n')
+		myfile.write('  test2:\n')
+		myfile.write('    test2_F: 2\n')
   
 	# copyInitFiles(Exam.EXAM_NAME)
 	log (_("Exam {} initialized.").format(Exam.EXAM_NAME))
@@ -795,6 +801,9 @@ def commandQuestions():
 ############################################################################
 def commandLatex():
 
+	if not find_executable('pdflatex'): 
+		error(_("Software 'pdflatex' not installed. Install it first to generate PDFs."))
+  
 	log (_("Compiling TEX files from exam {}.").format(Exam.EXAM_NAME)) 
 
 	os.chdir(Exam.EXAM_NAME)
@@ -831,17 +840,20 @@ def init(exam: str = typer.Argument(..., help=_("Name of exam that will be creat
     
 @app.command()
 def new(exam: str = typer.Argument(..., help=_("Exam to generate"))):
-    defineGlobals(exam)
-    commandNew()
+	defineGlobals(exam)
+	Exam.examConfig = loadExamConfig()
+	commandNew()
     
 @app.command()
 def latex(exam: str = typer.Argument(..., help=_("Exam to compile to PDF"))):
     defineGlobals(exam)
+    Exam.examConfig = loadExamConfig()
     commandLatex()
 
 @app.command()
 def generate(exam: str = typer.Argument(..., help=_("Exam to generate files"))):
     defineGlobals(exam)
+    Exam.examConfig = loadExamConfig()
     commandGenerate()
 
 @app.command()
@@ -851,16 +863,19 @@ def questions():
 @app.command()
 def remove(exam: str = typer.Argument(..., help=_("Exam to remove"))):
     defineGlobals(exam)
+    Exam.examConfig = loadExamConfig()
     commandRemove()
 
 @app.command()
 def clear(exam: str = typer.Argument(..., help=_("Exam to clear"))):
     defineGlobals(exam)
+    Exam.examConfig = loadExamConfig()
     commandClear()
 
 @app.command()
 def show(exam: str = typer.Argument(..., help=_("Exam to show details"))):
     defineGlobals(exam)
+    Exam.examConfig = loadExamConfig()
     commandShow()
 
 @app.command()
@@ -870,6 +885,7 @@ def showconfig():
 @app.command()
 def clone(exam_from: str = typer.Argument(..., help=_("Exam source")), exam_to: str = typer.Argument(..., help=_("Exam target"))):
     defineGlobals(exam_from)
+    Exam.examConfig = loadExamConfig()
     commandClone(exam_to)
 
 def setHelp():
